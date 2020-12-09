@@ -3,6 +3,8 @@ class PostsController < ApplicationController
   get '/posts' do
     if logged_in?
       @posts = Post.all
+  #     @posts.sort_by { |post| [post.artist] }
+  # binding.pry
       erb :'posts/index'
     else
       redirect to '/login'

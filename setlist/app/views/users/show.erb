@@ -1,7 +1,11 @@
-<h1>  USERS SHOW </h1>
 
-<p> Here are your posts, <%= @user.username %>
+
+<h2> Here are your posts, <%= @user.username %>
+<input type="button" onclick="window.location.href='/logout';" value="Logout" />
+<input type="button" onclick="window.location.href='/posts';" value="View All Posts" /></h2>
 <% @user.posts.each do |post| %>
       <p><%= post.artist %>  <%=post.title%>
-       <input type="button" onclick="window.location.href='/posts/<%=post.id%>';" value="View Post" /></p>
+       <input type="button" onclick="window.location.href='/posts/<%=post.id%>';" value="View Post" />
+       <%=post.user.username%></p>
 <% end %>
+
