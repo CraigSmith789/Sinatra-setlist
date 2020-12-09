@@ -1,1 +1,7 @@
 <h1>  USERS SHOW </h1>
+
+<p> Here are your posts, <%= @user.username %>
+<% @user.posts.each do |post| %>
+      <p><%= post.artist %>  <%=post.title%>
+       <input type="button" onclick="window.location.href='/posts/<%=post.id%>';" value="View Post" /></p>
+<% end %>
