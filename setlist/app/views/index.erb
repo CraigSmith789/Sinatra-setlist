@@ -1,17 +1,22 @@
 <h1>THIS IS THE HOMEPAGE</h1>
 
-<p>Please signin or signup below:</p>
 
 <nav>
   <% if logged_in? %>
-
-    <a href="/tweets/new"> Create Tweet </a>
-    <a href="/logout"> Log Out </a>
     <p>Welcome, <%=current_user.username %></p>
 
+    <input type="button" onclick="window.location.href='/posts/new';" value="New Post" />
+    <input type="button" onclick="window.location.href='/logout';" value="Logout" />
+
+    
+    
+
   <% else %>
-    <a href="/signup">Sign Up</a>
-    <a href="/login"> Sign In </a>
+    <p>Please Sing Up or Log In below:</p>
+
+    <input type="button" onclick="window.location.href='/signup';" value="Sign Up" />&nbsp
+    <input type="button" onclick="window.location.href='/login';" value="Log In" />
+    
   <%end %>
 
 </nav>

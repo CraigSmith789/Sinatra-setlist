@@ -1,0 +1,12 @@
+<h2> This is Show page for <%= current_user.username %> </h2>
+<p><b>User:</b> <%= @post.user.username %> <b>Title:</b><%= @post.title %> <b>Artist:</b> <%= @post.artist %>
+<p><b>Difficulty:</b> <%= @post.difficulty %>
+<p><%= @post.content %>
+<form method="post" action="/posts/<%=@post.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Post">
+</form>
+
+<input type="button" onclick="window.location.href='/posts/<%=@post.id%>/edit';" value="Edit Post" />
+<br>
+<p><input type="button" onclick="window.location.href='/posts';" value="View Posts" /></P>

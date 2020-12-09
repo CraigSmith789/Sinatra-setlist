@@ -1,1 +1,13 @@
-<h1>THIS IS POSTS NEW</h1>
+<h2>Add a post</h2>
+<p>User: <%= current_user.username %></p>
+<form action="/posts" method="POST">
+  Title: <input type="text" name="title"> &nbsp Artist:<input type="text" name="artist" >&nbsp
+    Difficulty: Novice <input type="radio" value="novice" name="difficulty">  Medium <input type="radio" value="medium" name="difficulty">  Pro <input type="radio" value="pro" name="difficulty">
+  <br>
+  <br>
+  <p><label for="post"> Post:</label></p>
+   <textarea id="post" name="content" rows=5 cols=100>
+  
+  </textarea></p>
+  <input  type="submit" value="Submit"> <input type="button" onclick="window.location.href='/posts';" value="Cancel" />
+</form>
