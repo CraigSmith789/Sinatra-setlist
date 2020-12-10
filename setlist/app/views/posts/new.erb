@@ -1,8 +1,8 @@
 <h2>Add a post</h2>
 <p>User: <%= current_user.username %></p>
 <form action="/posts" method="POST">
-  Title: <input type="text" name="title"> &nbsp Artist:<input type="text" name="artist" >&nbsp
-    Difficulty: Novice <input type="radio" value="novice" name="difficulty">  Medium <input type="radio" value="medium" name="difficulty">  Pro <input type="radio" value="pro" name="difficulty">
+  Title: <input type="text" name="title" required> &nbsp Artist:<input type="text" name="artist" required >&nbsp
+    Difficulty: Novice <input type="radio" value="novice" name="difficulty">  Medium <input type="radio" value="medium" name="difficulty">  Pro <input type="radio" value="pro" name="difficulty" required>
   <br>
   <br>
   <p><label for="post"> Post:</label></p>

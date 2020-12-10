@@ -2,9 +2,13 @@
 <h2> Welcome, <%= current_user.username %>.  Please select a post to view or create a 
 <input type="button" onclick="window.location.href='/posts/new';" value="New Post" />
 <input type="button" onclick="window.location.href='/users/<%=current_user.id%>';" value="My Posts" />
-<input type="button" onclick="window.location.href='/logout';" value="Logout" /> </h2>
+<input type="button" onclick="window.location.href='/logout';" value="Logout" />
+
+</h2> 
 <% @posts.each do |post| %>
-     <p><%= post.artist %>  <%=post.title%>
+     <p>Artist: <%= post.artist %> -- Title: <%=post.title%>
        <input type="button" onclick="window.location.href='/posts/<%=post.id%>';" value="View Post" />
-       <%=post.user.username%></p>
+       Difficulty: <%=post.difficulty%>---Added by: <%=post.user.username%>--<%=post.user.created_at%></p>
 <% end %>
+
+

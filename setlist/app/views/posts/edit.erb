@@ -5,7 +5,7 @@
   <input id="hidden" type="hidden" name="_method" value="PATCH">
   <b>Title:</b> <input type="text" name="title" value=<%= @post.title %>>
   <b>Artist:</b> <input type="text" name="artist" value=<%= @post.artist %>>
-  Difficulty: Novice <input type="radio" value="novice" name="difficulty">  Medium <input type="radio" value="medium" name="difficulty">  Pro <input type="radio" value="pro" name="difficulty">
+  Difficulty: Novice <input type="radio" value="novice" name="difficulty">  Medium <input type="radio" value="medium" name="difficulty">  Pro <input type="radio" value="pro" name="difficulty" required>
   <%# <%='checked'== @post.difficulty%>
   <p><label for="post"> Post:</label></p>
    <textarea id="post" name="content" rows=5 cols=100>

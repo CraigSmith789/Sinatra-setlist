@@ -1,9 +1,9 @@
 
 
-<h2>Enter Information to Sign Up</h2>
+<h2>Enter Information to Sign Up or return to <input type="button" onclick="window.location.href='/login';" value="Log In" /></h2>
 <form action="/signup" method="POST">
-  <p>Email: <input type="text" name="email"></p>
-  <p>Username: <input type="text" name="username"></p>
-  <p>Password: <input type="text" name="password"></p>
+  <p>Email: <input type="text" name="email" required></p>
+  <p>Username: <input type="text" name="username" required></p>
+  <p>Password: <input type="text" name="password" required></p>
   <input type="submit" value="Sign Up">
 </form>

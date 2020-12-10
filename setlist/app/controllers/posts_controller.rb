@@ -3,8 +3,7 @@ class PostsController < ApplicationController
   get '/posts' do
     if logged_in?
       @posts = Post.all
-  #     @posts.sort_by { |post| [post.artist] }
-  # binding.pry
+      # @posts= Post.all.sort_by { |post| post.user.created_at(desc) }
       erb :'posts/index'
     else
       redirect to '/login'
@@ -65,7 +64,7 @@ class PostsController < ApplicationController
       else
         @post = Post.find_by_id(params[:id])
         if @post && @post.user == current_user
-          if @post.update(content: params[:content])
+          if @post.update(content: params[:content], title: params[:title], artist: params[:artist], difficulty: params[:difficulty])
             redirect to "/posts/#{@post.id}"
           else
             redirect to "/posts/#{@post.id}/edit"
