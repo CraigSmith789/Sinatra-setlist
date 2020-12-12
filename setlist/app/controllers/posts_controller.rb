@@ -1,13 +1,8 @@
 class PostsController < ApplicationController
 
   get '/posts' do
-    if logged_in?
       @posts = Post.all
-      # @posts= Post.all.sort_by { |post| post.user.created_at(desc) }
       erb :'posts/index'
-    else
-      redirect to '/login'
-    end
   end
 
   get '/posts/new' do
@@ -23,9 +18,10 @@ class PostsController < ApplicationController
       if params[:content] == ""
         redirect to "/posts/new"
       else
-        @post = current_user.posts.build(title: params[:title], artist: params[:artist], difficulty: params[:difficulty], content: params[:content])
-        if @post.save
-          redirect to "/posts/#{@post.id}"
+        # @post = current_user.posts.build(title: params[:title], artist: params[:artist], difficulty: params[:difficulty], content: params[:content])
+        post = current_user.posts.build(params)
+        if post.save
+          redirect to "/posts/#{post.id}"
         else
           redirect to "/posts/new"
         end
