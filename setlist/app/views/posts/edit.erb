@@ -1,6 +1,9 @@
 
 <h2> Edit Post for User: <%= current_user.username %> </h2>
 
+Sanitize.document(html,
+  :allow_doctype => true,
+  :elements      => ['html']
 <form method="post" action="/posts/<%=@post.id%>">
   <input id="hidden" type="hidden" name="_method" value="PATCH">
   <b>Title:</b> <input type="text" name="title" value=<%= @post.title %>>

@@ -1,4 +1,6 @@
-
+Sanitize.document(html,
+  :allow_doctype => true,
+  :elements      => ['html']
 
 <h2>Enter Information to Sign Up or return to <input type="button" onclick="window.location.href='/login';" value="Log In" /></h2>
 <form action="/signup" method="POST">

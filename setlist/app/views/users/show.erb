@@ -1,4 +1,6 @@
-
+Sanitize.document(html,
+  :allow_doctype => true,
+  :elements      => ['html']
 
 <h2> Here are your posts, <%= @user.username %>
 <input type="button" onclick="window.location.href='/posts/new';" value="New Post" />

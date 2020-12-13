@@ -1,3 +1,6 @@
+Sanitize.document(html,
+  :allow_doctype => true,
+  :elements      => ['html']
 <h2>Add a post</h2>
 <p>User: <%= current_user.username %></p>
 <form action="/posts" method="POST">
